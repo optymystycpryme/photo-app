@@ -9,6 +9,16 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
+
+  ActionMailer::Base.smtp_settings = {
+    address: 'smtp.sendgrid.net',
+    port: '587',
+    authentication: :plain,
+    username: Rails.application.credentials[:sendgrid][:SENDGRID_USERNAME],
+    password: Rails.application.credentials[:sendgrid][:SENDGRID_PASSWORD],
+    domain: 'heroku.com',
+    enable_starttls_auto: true
+  }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: 'piktcher-this.herokuapp.com/',
                                                protocol: 'https' }
