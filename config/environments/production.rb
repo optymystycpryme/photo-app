@@ -11,17 +11,16 @@ Rails.application.configure do
   config.eager_load = true
 
   ActionMailer::Base.smtp_settings = {
+    username: Rails.application.credentials[:sendgrid][:SENDGRID_USERNAME],
+    password: Rails.application.credentials[:sendgrid][:SENDGRID_PASSWORD],
     address: 'smtp.sendgrid.net',
     port: '587',
     authentication: :plain,
-    username: Rails.application.credentials[:sendgrid][:SENDGRID_USERNAME],
-    password: Rails.application.credentials[:sendgrid][:SENDGRID_PASSWORD],
     domain: 'heroku.com',
     enable_starttls_auto: true
   }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'piktcher-this.herokuapp.com/',
-                                               protocol: 'https' }
+  config.action_mailer.default_url_options = { :host => 'piktcher-this.herokuapp.com/', :protocol => 'https' }
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
