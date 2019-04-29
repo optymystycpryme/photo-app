@@ -1,0 +1,128 @@
+$primary-color: #ff0;
+$secondary-color: #08fcff;
+$button-color: #442255;
+$button-hover-color: #442259;
+$secondary-link: #bd92d3;
+
+body {
+  margin-top: 75px;
+  background: $secondary-color;
+}
+
+.btn-primary {
+  background: $button-color;
+  border: .5px solid #bd92d3;
+  &:hover {
+    background: $button-hover-color;
+    border: .5px solid #bd92d3;
+    transform: scale(1.03);
+  }
+}
+
+.navbar {
+  background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+  height: 55px;
+  border: none;
+  box-shadow: 0 4px 8px 4px rgba($color: #000000, $alpha: 0.3);
+  a {
+    color: $primary-color !important;
+    line-height: 25px;
+    &:hover {
+      color: $secondary-color !important;
+    }
+  }
+}
+
+.user-name {
+  padding: 0 !important ;
+  padding-left: 5px;
+  text-align: center;
+  .fa {
+    padding-right: 3px;
+  }
+  a {
+    color: $primary-color !important;
+    margin: 0 !important;
+    padding: 5px !important;
+    line-height: 35px;
+  }
+  a:hover, a:focus {
+    background: none !important;
+  }
+}
+
+.logout {
+  padding-left: 0;
+  a {
+    color: #fff;
+  }
+  a:hover {
+    background: none !important;
+  }
+}
+
+.nav.navbar-right {
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.nav.navbar-nav {
+  .navbar-link {
+    border-radius: 5px;
+    color: #fff;
+    padding: 8px;
+  }
+  .navbar-link:focus, .navbar-link:hover {
+    background: #3071a9;
+    color: #fff;
+  }
+  li a {
+    margin-right: 5px;
+    margin-top: 2px;
+  }
+}
+
+.btn-primary:visited, .btn-danger:visited {
+  color: #fff;
+}
+
+.sign-up-link {
+  background: none !important;
+}
+
+.navbar-toggle {
+  border: 1px solid $primary-color !important;
+}
+
+.icon-bar {
+  background-color: $primary-color !important;
+}
+.navbar-collapse {
+  border: none !important;
+}
+
+.well {
+  background: #000;
+  color: #fff;
+}
+
+.shared-links {
+  color: $primary-color !important;
+}
+
+.shared-links-secondary {
+  color: $secondary-link;
+  &:hover {
+    color: $button-hover-color;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 765px) {
+  .collapse {
+    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+  }
+  .navbar-right {
+    padding-right: 10vw;
+  }
+}

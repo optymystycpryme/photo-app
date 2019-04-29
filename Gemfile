@@ -9,6 +9,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'coffee-rails', '~> 4.2'
 gem 'devise', '~> 4.2'
 gem 'devise-bootstrap-views', '~> 1.1'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'pg', '>= 0.18', '< 2.0'
