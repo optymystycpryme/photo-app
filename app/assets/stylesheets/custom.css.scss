@@ -4,9 +4,19 @@ $button-color: #442255;
 $button-hover-color: #442259;
 $secondary-link: #bd92d3;
 
+html {
+  height: 100%;
+}
+
 body {
   margin-top: 75px;
   background: $secondary-color;
+  height: 100%
+}
+
+.container {
+  min-height: 100%;
+  position: relative;
 }
 
 .btn-primary {
@@ -117,12 +127,152 @@ body {
   }
 }
 
-/* Media Queries */
-@media (max-width: 765px) {
+footer {
+  height: 60px;
+}
+
+// /* Welcome Page */
+
+.welcome-main-div {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+.features {
+  ul {
+    margin-left: 0;
+    padding-left: 15px;
+  }
+}
+
+.jumbotron {
+  text-align: center;
+  min-width: 100%;
+  min-height: 100%;
+  background-image: asset-url('photos-2.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  font-family: 'Helvetica Neue' !important;
+  font-stretch: expanded;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
+  border: solid 5px #fff;
+  border-radius: 30px !important;
+}
+
+.no-left-padding {
+  padding-left: 0 !important;
+}
+
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+.plan {
+  border: solid 5px #fff;
+  border-radius: 30px !important;
+  text-align: center;
+  min-height: 100%;
+  ul li {
+    list-style: none;
+    font-size: 16px;
+  }
+}
+
+.premium {
+  width: 32%;
+  .sign-up {
+    margin-top: 44px;
+  }
+}
+.amaze {
+  width: 32%;
+  margin-left: 2%;
+  margin-right: 2%;
+  .sign-up {
+    margin-top: 22px;
+  }
+}
+.supra {
+  width: 32%;
+}
+
+.extra {
+  color: $primary-color;
+}
+
+.extra-extra {
+  color: $secondary-color;
+}
+
+/* Footer */
+.footer {
+  margin-top: 30px;
+}
+
+// /* Media Queries */
+@media (max-width: 500px) {
+  .welcome-main-div {
+    width: 96%;
+  }
+  .premium {
+    width: 100%;
+    padding-bottom: 63px;
+  }
+  .amaze {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 41px;
+  }
+  .supra {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
   .collapse {
     background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
   }
   .navbar-right {
-    padding-right: 10vw;
+    padding-right: 12vw;
+  }
+  .premium {
+    width: 100%;
+    padding-bottom: 63px;
+  }
+  .amaze {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 41px;
+  }
+  .supra {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1170px) {
+  .premium {
+    width: 100%;
+    padding-bottom: 63px;
+  }
+  .amaze {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 41px;
+  }
+  .supra {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1171px) {
+  .amaze {
+    margin: 0 2% 0 2%;
   }
 }
