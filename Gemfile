@@ -17,6 +17,7 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'sendgrid-ruby', '~> 5.3'
 gem 'stripe', '~> 4.16'
+gem 'turbolinks', '~> 5'
 gem 'twitter-bootstrap-rails', '~> 4.0'
 gem 'uglifier', '>= 1.3.0'
 
