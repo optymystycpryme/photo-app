@@ -1,39 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <div class="nav-container">
-    <a class="navbar-brand" href="/"><h2 class="display-4 justify-content-center">PhotoApp</h2></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-xl navbar-light bg-light fixed-top">
+  <a class="navbar-brand mx-auto" href="/"><h2>PhotoApp</h2></a>
+  <% if current_user %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1"
+      aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+  <% end %>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <% if current_user %>
-          <li class="nav-item">
-            <%= link_to "Fun Page", fun_page_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Your Images", images_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Link3", "#", class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-      <ul class="navbar-nav justify-content-center">
-        <% if current_user %>
-          <li class=" nav-item user-name">
-            <%= link_to ('<i class="fa fa-user"></i>' + truncate(current_user.email, length: 25)).html_safe, edit_user_registration_path, title: 'Edit Profile', class: "nav-link" %>
-          </li>
-          <li class="nav-item logout">
-            <%= link_to 'Logout', destroy_user_session_path, title: 'Logout', method: :delete, class: "nav-link" %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to 'Sign In', new_user_session_path, class: 'sign-up-link', title: 'Sign In', class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+  <div class="collapse navbar-collapse" id="navbar1">
+    <ul class="navbar-nav mr-auto">
+      <% if current_user %>
+        <li class="nav-item pl-2">
+          <%= link_to "Fun Page", fun_page_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item pl-2">
+          <%= link_to "Your Images", images_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item pl-2">
+          <%= link_to "Link3", "#", class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+    <ul class="navbar-nav">
+      <% if current_user %>
+        <li class=" nav-item user-name">
+          <%= link_to ('<i class="fa fa-user"></i>' + truncate(current_user.email, length: 25)).html_safe, edit_user_registration_path, title: 'Edit Profile', class: "nav-link" %>
+        </li>
+        <li class="nav-item logout pl-2">
+          <%= link_to 'Logout', destroy_user_session_path, title: 'Logout', method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'Sign In', new_user_session_path, class: 'sign-up-link', title: 'Sign In', class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </nav>

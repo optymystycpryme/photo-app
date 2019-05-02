@@ -1,44 +1,40 @@
-<%= form_for @image, :html => { multipart: true, class: "form-horizontal image" } do |f| %>
-
+<div class="mx-auto">
+  <%= form_for @image, :html => { multipart: true, class: "form-horizontal image" } do |f| %>
   <% if @image.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
+  <div id="error_expl" class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
         <% @image.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
-        </ul>
-      </div>
+      </ul>
     </div>
+  </div>
   <% end %>
-
   <div class="form-group">
-    <%= f.label :name, class: 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :name, class: 'form-control' %>
+    <div class="col-lg-12">
+      <%= f.text_field :name, class: 'form-control', placeholder: "Add a title for your image..." %>
     </div>
-    <%= f.error_span(:name) %>
   </div>
   <div class="form-group">
-    <%= f.label :picture, class: 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-lg-12">
       <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     </div>
-    <%= f.error_span(:picture) %>
   </div>
-
   <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, class: 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                images_path, class: 'btn btn-default' %>
+    <div class="col-lg-12">
+      <div class="image-btn-group">
+        <%= f.submit nil, class: 'btn btn-primary btn-xs' %>
+        <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+                          images_path, class: 'btn btn-destroy btn-xs' %>
+      </div>
     </div>
   </div>
-
-<% end %>
+  <% end %>
+</div>
 
 <script type="text/javascript">
   $('#image_picture').bind('change', function() {
