@@ -1,59 +1,64 @@
-<% if current_user %>
-  <h3>Welcome: <%= current_user.email %></h3>
-<% else %>
-  <div class="welcome-main-div">
-    <div align="center" class="jumbotron">
-      <h2>Welcome to the Photo Management App!</h2>
-      <p class="lead">You'll love managing your Photos with our application. Sign up!</p>
-    </div>
-    <div class="row plan-div">
-      <div class="plans clearfix">
-        <div class="col-lg-3 col-md-3 col-sm-12 plan well premium">
-          <h2>Premium Plan</h2>
-          <div class="price">
-            <h3>Price: $10</h3>
+<div class="welcome-main-div">
+  <div class="jumbotron">
+    <h2 class="display-2">Welcome to the Photo Management App!</h2>
+    <h3>You'll love managing your Photos with our application. Sign up!</h3>
+    <button class="btn btn-primary btn-lg welcome-btn" id="button">Checkout Our Plans</button>
+  </div>
+  <div class="plan-div" id="plans">
+    <div class="row justify-content-center plans clearfix">
+      <div class="col-lg-4 col-div">
+        <div class="card mb-4 plan">
+          <%= image_tag "photos.jpg", class: "card-img-top", width: '100%', height: '200px' %>
+          <div class="card-body">
+            <h2 class="card-title">Premium Plan: <span class="price">Price: $10</span></h2>
+            <div class="features">
+              <ul>
+                <li>Unlimited Image Uploads</li>
+                <li>Responsive Design</li>
+                <li>Access Anywhere</li>
+              </ul>
+            </div>
+            <p><%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg sign-up card-link' %></p>
           </div>
-          <div class="features">
-            <ul>
-              <li>Unlimited Image Uploads</li>
-              <li>Responsive Design</li>
-              <li>Access Anywhere</li>
-            </ul>
-          </div>
-          <p><%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg sign-up' %></p>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-12 plan well amaze">
-          <h2>Amaze Plan</h2>
-          <div class="price">
-            <h3>Price: $20</h3>
+      </div>
+
+      <div class="col-lg-4 col-div">
+        <div class="card mb-4 plan">
+          <%= image_tag "photo-4.jpg", class: "card-img-top", width: '100%', height: '200px' %>
+          <div class="card-body">
+            <h2 class="card-title">Amaze Plan: <span class="price">Price: $20</span></h2>
+            <div class="features">
+              <ul>
+                <li>Unlimited Image Uploads</li>
+                <li>Responsive Design</li>
+                <li>Access Anywhere</li>
+                <li class="extra">Unlimited Projects</li>
+              </ul>
+            </div>
+            <p><%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg sign-up card-link' %></p>
           </div>
-          <div class="features">
-            <ul>
-              <li>Unlimited Image Uploads</li>
-              <li>Responsive Design</li>
-              <li>Access Anywhere</li>
-              <li class="extra">Unlimited Projects</li>
-            </ul>
-          </div>
-          <p><%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg sign-up' %></p>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-12 plan well supra">
-          <h2>Supra Plan</h2>
-          <div class="price">
-            <h3>Price: $100</h3>
+      </div>
+
+      <div class="col-lg-4 col-div">
+        <div class="card md-4 plan">
+          <%= image_tag "photo-3.jpg", class: "card-img-top", width: '100%', height: '200px' %>
+          <div class="card-body">
+            <h2 class="card-title">Supra Plan: <span class="price">Price: $100</span></h2>
+            <div class="features">
+              <ul>
+                <li>Unlimited Image Uploads</li>
+                <li>Responsive Design</li>
+                <li>Access Anywhere</li>
+                <li class="extra">Unlimited Projects</li>
+                <li class="extra-extra">Life Time Access</li>
+              </ul>
+            </div>
+            <p><%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg sign-up card-link' %></p>
           </div>
-          <div class="features">
-            <ul>
-              <li>Unlimited Image Uploads</li>
-              <li>Responsive Design</li>
-              <li>Access Anywhere</li>
-              <li class="extra">Unlimited Projects</li>
-              <li class="extra-extra">Life Time Access</li>
-            </ul>
-          </div>
-          <p><%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg sign-up' %></p>
         </div>
       </div>
     </div>
   </div>
-<% end %>
+</div>

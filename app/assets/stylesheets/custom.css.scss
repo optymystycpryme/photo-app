@@ -3,6 +3,10 @@ $secondary-color: #00e6e6;
 $button-color: #442255;
 $button-hover-color: #442259;
 $secondary-link: #bd92d3;
+$delete-color: #cd4a24;
+$green-color: #009900;
+$maroon-color: #6d1d41;
+$off-white-color: #f2f2f2;
 
 html {
   height: 100%;
@@ -10,33 +14,54 @@ html {
 
 body {
   margin-top: 75px;
-  background: $secondary-color;
-  height: 100%
+  background: #fff !important;
+  height: 100%;
+  font-size: 18px;
 }
 
-.container {
+a, p {
+  font-size: 18px;
+}
+
+label {
+  font-size: 16px;
+}
+
+.text-muted {
+  font-size: 14px;
+}
+
+.application-container {
+  margin-top: 50px;
+}
+
+.nav-container {
+  width: 80%;
+  margin: auto;
   min-height: 100%;
   position: relative;
 }
 
 .btn-primary {
-  background: $button-color;
-  border: .5px solid #bd92d3;
+  background: $button-color !important;
+  border: .5px solid #bd92d3 !important;
+  padding: 8px 15px 8px 15px !important;
+  font-size: 16px !important;
   &:hover {
-    background: $button-hover-color;
-    border: .5px solid #bd92d3;
+    background: $button-hover-color !important;
+    border: .5px solid #bd92d3 !important;
     transform: scale(1.03);
   }
 }
 
 .navbar {
   background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
-  height: 55px;
+  // height: 55px;
   border: none;
+  border-radius: 0;
   box-shadow: 0 4px 8px 4px rgba($color: #000000, $alpha: 0.3);
   a {
     color: $primary-color !important;
-    line-height: 25px;
     &:hover {
       color: $secondary-color !important;
     }
@@ -45,19 +70,18 @@ body {
 
 .user-name {
   padding: 0 !important ;
-  padding-left: 5px;
-  text-align: center;
   .fa {
     padding-right: 3px;
   }
   a {
-    color: $primary-color !important;
+    color: $secondary-color !important;
     margin: 0 !important;
-    padding: 5px !important;
+    // padding: 5px !important;
     line-height: 35px;
   }
   a:hover, a:focus {
     background: none !important;
+    color: $primary-color !important;
   }
 }
 
@@ -100,20 +124,20 @@ body {
   background: none !important;
 }
 
-.navbar-toggle {
+.navbar-toggler {
   border: 1px solid $primary-color !important;
-}
-
-.icon-bar {
   background-color: $primary-color !important;
 }
+
 .navbar-collapse {
   border: none !important;
 }
 
 .well {
-  background: #1d0f24;
+  background: #000000;
   color: #fff;
+  box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.3);
+  border: none;
 }
 
 .shared-links {
@@ -126,16 +150,24 @@ body {
     color: $button-hover-color;
   }
 }
-.credit-card-div {
-  // margin-bottom: 20px !important;
+
+.remember-me-label {
+  padding-right: 15px;
+  margin-left: -10px;
+}
+
+.form-check-input {
+  font-size: 20px;
+  margin-top: 6px !important;
+  cursor: crosshair;
 }
 
 // /* Welcome Page */
 
 .welcome-main-div {
-  width: 80%;
+  width: 100%;
   height: 100%;
-  margin: 0 auto;
+  margin: auto;
 }
 .features {
   ul {
@@ -145,34 +177,52 @@ body {
 }
 
 .jumbotron {
+  height: 200px;
   text-align: center;
   min-width: 100%;
-  min-height: 100%;
+  height: 100vh;
   background-image: asset-url('photos-2.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top;
+  background-attachment: fixed;
   color: #fff;
-  font-family: 'Helvetica Neue' !important;
   font-stretch: expanded;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
-  border: solid 5px #fff;
-  border-radius: 30px !important;
+  border: solid 1px #000;
+  border-radius: 2px !important;
+  h2 {
+    padding-top: 30vh;
+  }
 }
-
+.welcome-btn {
+  margin-top: 25px;
+  font-size: 30px !important;
+  text-decoration: none !important;
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
+}
 .no-left-padding {
   padding-left: 0 !important;
 }
 
+.plan-div {
+  width: 80%;
+  margin: auto;
+  height: 50%;
+  padding-top: 75px;
+}
 .listing {
   list-style: none;
   padding-left: 0;
 }
 
 .plan {
-  border: solid 5px #fff;
-  border-radius: 30px !important;
+  background: #000 !important;
+  color: #fff;
   text-align: center;
   min-height: 100%;
   ul li {
@@ -181,22 +231,12 @@ body {
   }
 }
 
-.premium {
-  width: 32%;
-  .sign-up {
-    margin-top: 44px;
-  }
+.col-div {
+  margin-bottom: 25px;
 }
-.amaze {
-  width: 32%;
-  margin-left: 2%;
-  margin-right: 2%;
-  .sign-up {
-    margin-top: 22px;
-  }
-}
-.supra {
-  width: 32%;
+
+.price {
+  color: orange;
 }
 
 .extra {
@@ -205,6 +245,68 @@ body {
 
 .extra-extra {
   color: $secondary-color;
+}
+
+/* Image index & show page */
+.image-card {
+  background: $off-white-color;
+  &:hover {
+    background: darken($off-white-color, 5%);
+    cursor: grab;
+  }
+}
+.image-index-title {
+  padding-top: 15px;
+  a {
+    text-decoration: none !important;
+    color: #000;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+.image-show-card {
+  padding: 10px;
+}
+
+.show-image {
+  max-width: 100%;
+  height: auto;
+}
+.index-card-image {
+  max-width: 100%;
+  max-height: 200px;
+  height: auto;
+  width: auto;
+}
+.image-btn-group {
+  padding-bottom: 15px;
+  .btn {
+    font-size: 14px;
+    border-radius: 0 !important;
+    color: #fff;
+  }
+  .btn-show {
+    background: $maroon-color;
+    &:hover {
+      background: darken($maroon-color, 10%);
+    }
+  }
+  .btn-edit {
+    background: $green-color;
+    &:hover {
+      background: darken($green-color, 10%);
+    }
+  }
+  .btn:hover {
+    color: $secondary-color;
+  }
+  .btn-destroy {
+    background: $delete-color;
+    &:hover {
+      background: darken($delete-color, 10%);
+    }
+  }
 }
 
 /* Footer */
@@ -216,7 +318,7 @@ body {
 // /* Media Queries */
 @media (max-width: 500px) {
   .welcome-main-div {
-    width: 96%;
+    width: 100%;
   }
   .premium {
     width: 100%;
@@ -240,9 +342,9 @@ body {
 }
 
 @media (max-width: 768px) {
-  .collapse {
-    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
-  }
+  // .collapse {
+  //   background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+  // }
   .navbar-right {
     padding-right: 12vw;
   }
@@ -262,23 +364,18 @@ body {
 }
 
 @media (min-width: 769px) and (max-width: 1170px) {
-  .premium {
-    width: 100%;
-    padding-bottom: 63px;
-  }
-  .amaze {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    padding-bottom: 41px;
-  }
-  .supra {
-    width: 100%;
+  .plan {
+    margin-bottom: 2em;
   }
 }
 
 @media (min-width: 1171px) {
-  .amaze {
-    margin: 0 2% 0 2%;
-  }
+  // .amaze {
+  //   margin: 0 2% 0 2%;
+  // }
+}
+
+#panel {
+  padding: 50px;
+  display: none;
 }

@@ -11,7 +11,19 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require jquery
-//= require twitter/bootstrap
+//= require jquery3
+//= require jquery_ujs
+//= require jquery-ui
+//= require popper
 //= require activestorage
+//= require turbolinks
 //= require_tree .
+//= require bootstrap-sprockets
+
+$(document).ready(function () {
+  $("#button").click(function () {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("#plans").offset().top
+    }, 2000);
+  });
+});

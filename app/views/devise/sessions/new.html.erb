@@ -14,10 +14,10 @@
 
   <% if devise_mapping.rememberable? %>
   <div class="form-group form-check">
-    <%= f.check_box :remember_me, class: 'form-check-input' %>
     <%= f.label :remember_me, class: 'form-check-label' do %>
-    <%= resource.class.human_attribute_name('remember_me') %>
+    <p class="remember-me-label"><%= resource.class.human_attribute_name('remember_me') %></p>
     <% end %>
+    <%= f.check_box :remember_me, class: 'form-check-input' %>
   </div>
   <% end %>
 
