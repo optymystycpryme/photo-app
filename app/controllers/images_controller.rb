@@ -7,6 +7,14 @@ class ImagesController < ApplicationController
     @images = Image.by_position
   end
 
+  def sort
+    params[:order].each do |key, value|
+      Image.find(value[:id]).update(position: value[:position])
+    end
+
+    render nothing: true
+  end
+
   # GET /images/1
   # GET /images/1.json
   def show

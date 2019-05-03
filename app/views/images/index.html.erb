@@ -7,7 +7,7 @@
   <br>
   <div class="row sortable">
     <% @images.each do |image| %>
-    <div class="card col-lg-4 col-md-6 col-sm-6 col-xs-12 image-card">
+    <div class="card col-lg-4 col-md-6 col-sm-6 col-xs-12 image-card" data-id="<%= image.id %>">
       <p class="image-index-title"><%= link_to image.name, image_path(image), class: "card-title" %></p>
       <%= image_tag image.picture.url, class: "card-img-top index-card-image" %>
       <hr>
