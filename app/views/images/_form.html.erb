@@ -1,5 +1,5 @@
 <div class="mx-auto">
-  <%= form_for @image, :html => { multipart: true, class: "form-horizontal image" } do |f| %>
+  <%= form_for @image, html: { multipart: true, class: "form-horizontal image" } do |f| %>
   <% if @image.errors.any? %>
   <div id="error_expl" class="panel panel-danger">
     <div class="panel-heading">
@@ -7,8 +7,8 @@
     </div>
     <div class="panel-body">
       <ul>
-        <% @image.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+        <% @image.errors.full_messages.each do |error| %>
+          <%= alert_generator(error) %>
         <% end %>
       </ul>
     </div>
