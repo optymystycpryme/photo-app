@@ -73,14 +73,14 @@ label {
     padding-right: 3px;
   }
   a {
-    color: $secondary-color !important;
+    color: #fff !important;
     margin: 0 !important;
     padding: 5px !important;
     line-height: 35px;
   }
   a:hover, a:focus {
     background: none !important;
-    color: $primary-color !important;
+    color: $secondary-color !important;
   }
 }
 
@@ -156,13 +156,14 @@ label {
 }
 
 .remember-me-label {
-  padding-right: 15px;
-  margin-left: -10px;
+  padding-right: 25px;
+  margin-left: -18px;
+  font-size: 16px;
 }
 
 .form-check-input {
   font-size: 20px;
-  margin-top: 6px !important;
+  margin-top: 5px !important;
   cursor: crosshair;
 }
 
