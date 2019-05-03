@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require popper
+//= require gritter
 //= require activestorage
 //= require turbolinks
 //= require_tree .
