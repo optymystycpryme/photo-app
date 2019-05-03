@@ -5,7 +5,7 @@
     <%= link_to 'Add a new image', new_image_path, class: 'btn btn-primary btn-block' %>
   </div>
   <br>
-  <div class="row">
+  <div class="row sortable">
     <% @images.each do |image| %>
     <div class="card col-lg-4 col-md-6 col-sm-6 col-xs-12 image-card">
       <p class="image-index-title"><%= link_to image.name, image_path(image), class: "card-title" %></p>
