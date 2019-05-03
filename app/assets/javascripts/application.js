@@ -16,9 +16,10 @@
 //= require jquery-ui
 //= require popper
 //= require activestorage
+//= require html.sortable
 //= require turbolinks
-//= require_tree .
 //= require bootstrap-sprockets
+//= require_tree .
 
 $(document).ready(function () {
   $("#button").click(function () {
