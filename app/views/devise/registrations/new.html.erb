@@ -2,7 +2,7 @@
   Stripe.setPublishableKey("<%= ENV['STRIPE_TEST_PUBLISHABLE_KEY'] %>");
 </script>
 
-<div class="well col-md-8 mx-auto">
+<div class="well col-md-10 mx-auto">
   <h1><%= t('.sign_up') %></h1>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: "form", class: "cc_form" }) do |f| %>
@@ -29,26 +29,22 @@
     </div>
 
     <%= fields_for(:payment) do |p| %>
-      <div class="row col-md-12 col-sm-12 credit-card-div">
-        <div class="form-group col-lg-6 col-md-12 no-left-padding">
+      <div class="credit-card-div">
+        <div class="form-group">
           <%= p.label :card_number, "Credit Card Number", data: {stripe: 'label'} %>
           <%= p.text_field :card_number, class: 'form-control', required: true, data: {stripe: 'number'} %>
         </div>
-
-        <div class="form-group col-md-2 col-xs-4 cvv-div">
-          <%= p.label :card_cvv, "CVV", data: {stripe: 'label'} %>
-          <%= p.text_field :card_cvv, class: 'form-control', required: true, data: {stripe: 'cvc'} %>
-        </div>
-
-        <div class="form-group col-md-4">
-          <div class="col-md-12 card-exp">
+        <div class="row">
+          <div class="form-group col-lg-4">
+            <%= p.label :card_cvv, "CVV", data: {stripe: 'label'} %>
+            <%= p.text_field :card_cvv, class: 'form-control', required: true, data: {stripe: 'cvc'} %>
+          </div>
+          <div class="form-group col-lg-8">
             <%= p.label :card_expires, "Card Expiration", data: {stripe: 'label'} %>
-          </div>
-          <div class="col-md-6 col-xs-4">
-            <%= p.select :card_expires_month,  options_for_select(Payment.month_options), {include_blank: 'Month'}, "data-stripe" => "exp-month",  class: 'form-control', required: true %>
-          </div>
-          <div class="col-md-6 col-xs-4">
-            <%= p.select :card_expires_year,  options_for_select(Payment.year_options.push), {include_blank: 'Year'}, class: 'form-control', data: {stripe: "exp-year"}, required: true %>
+            <div class="form-inline">
+              <%= p.select :card_expires_month,  options_for_select(Payment.month_options), {include_blank: 'Month'}, "data-stripe" => "exp-month",  class: 'form-control col-lg-6 col-sm-6', required: true %>
+              <%= p.select :card_expires_year,  options_for_select(Payment.year_options.push), {include_blank: 'Year'}, class: 'form-control col-lg-6 col-sm-6', data: {stripe: "exp-year"}, required: true %>
+            </div>
           </div>
         </div>
       </div>
